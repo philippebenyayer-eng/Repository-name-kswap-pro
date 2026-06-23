@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MASK CASH</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#000;
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+/* Fond logo MASK CASH */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("logo-maskcash.jpg") center center no-repeat;
+background-size:cover;
+opacity:0.15;
+z-index:-1;
+}
+
+.container{
+padding:20px;
+padding-bottom:100px;
+}
+
+.logo{
+width:220px;
+display:block;
+margin:20px auto;
+border-radius:20px;
+filter:drop-shadow(0 0 15px #ff008a);
+}
+
+.wallet-card{
+background:rgba(20,20,20,.90);
+border-radius:25px;
+padding:20px;
+margin-top:15px;
+box-shadow:0 0 25px rgba(255,0,138,.25);
+backdrop-filter:blur(10px);
+}
+
+.wallet-name{
+color:#ccc;
+font-size:14px;
+}
+
+.balance{
+font-size:48px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.change{
+color:#ff4d6d;
+margin-top:10px;
+}
+
+.actions{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:20px;
+}
+
+.action{
+background:#2b001a;
+padding:18px;
+border-radius:18px;
+text-align:center;
+color:#ff008a;
+font-weight:bold;
+font-size:18px;
+}
+
+.portfolio{
+margin-top:25px;
+}
+
+.token{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+margin-top:10px;
+background:#111;
+border-radius:15px;
+}
+
+.token-name{
+font-weight:bold;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+height:75px;
+background:#111;
+border-top:1px solid #333;
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+
+backdrop-filter:blur(20px);
+}
+
+.bottom-nav a{
+color:#999;
+text-decoration:none;
+font-size:12px;
+text-align:center;
+}
+
+.bottom-nav a.active{
+color:#ff008a;
+}
+
+.bottom-nav span{
+display:block;
+font-size:22px;
+margin-bottom:4px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="logo-maskcash.jpg" class="logo">
+
+<div class="wallet-card">
+
+<div class="wallet-name">
+KDOLLAR WALLET
+</div>
+
+<div class="balance">
+19,12 $US
+</div>
+
+<div class="change">
+▼ -1,33 $US aujourd'hui
+</div>
+
+<div class="actions">
+
+<div class="action">
+🔄<br>Swap
+</div>
+
+<div class="action">
+➕<br>Acheter
+</div>
+
+<div class="action">
+📤<br>Envoyer
+</div>
+
+<div class="action">
+📥<br>Recevoir
+</div>
+
+</div>
+
+</div>
+
+<div class="portfolio">
+
+<div class="token">
+<div>
+<div class="token-name">K$</div>
+<div>8,64 K$</div>
+</div>
+<div>14,66 $US</div>
+</div>
+
+<div class="token">
+<div>
+<div class="token-name">BTC</div>
+<div>0,0004 BTC</div>
+</div>
+<div>12,24 $US</div>
+</div>
+
+<div class="token">
+<div>
+<div class="token-name">USDC</div>
+<div>5,38 USDC</div>
+</div>
+<div>5,38 $US</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom-nav">
+
+<a href="#" class="active">
+<span>🐆</span>
+Accueil
+</a>
+
+<a href="#">
+<span>🔄</span>
+Exchange
+</a>
+
+<a href="#">
+<span>💳</span>
+Paiements
+</a>
+
+<a href="#">
+<span>👛</span>
+Wallet
+</a>
+
+<a href="#">
+<span>👤</span>
+Profil
+</a>
+
+</div>
+
+</body>
+</html>
