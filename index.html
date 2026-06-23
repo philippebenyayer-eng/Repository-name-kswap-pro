@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MASK CASH</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#000;
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("logo-maskcash.jpg") center center no-repeat;
+background-size:cover;
+opacity:.15;
+z-index:-1;
+}
+
+.container{
+padding:20px;
+padding-bottom:100px;
+}
+
+.logo{
+width:220px;
+display:block;
+margin:20px auto;
+filter:drop-shadow(0 0 20px #ff008a);
+}
+
+.wallet-card{
+background:rgba(20,20,20,.9);
+border-radius:25px;
+padding:20px;
+box-shadow:0 0 25px rgba(255,0,138,.25);
+}
+
+.balance{
+font-size:48px;
+font-weight:bold;
+margin:15px 0;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+height:80px;
+background:#111;
+display:flex;
+justify-content:space-around;
+align-items:center;
+border-top:1px solid #333;
+}
+
+.bottom-nav a{
+color:#ff008a;
+text-decoration:none;
+text-align:center;
+font-size:12px;
+}
+
+.bottom-nav span{
+display:block;
+font-size:24px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="logo-maskcash.jpg" class="logo">
+
+<div class="wallet-card">
+
+<h3>KDOLLAR</h3>
+
+<div class="balance">
+19,12 $US
+</div>
+
+<p>Bienvenue sur MASK CASH</p>
+
+</div>
+
+</div>
+
+<div class="bottom-nav">
+
+<a href="#"><span>🐆</span>Home</a>
+<a href="#"><span>🔄</span>Swap</a>
+<a href="#"><span>💳</span>Pay</a>
+<a href="#"><span>👛</span>Wallet</a>
+<a href="#"><span>👤</span>Profil</a>
+
+</div>
+
+</body>
+</html>
