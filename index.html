@@ -6,6 +6,7 @@
 <title>MASK CASH</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -24,168 +25,246 @@ content:"";
 position:fixed;
 inset:0;
 background:url('B71822F6-8B75-41A2-88BE-0D7AF4F79B55.png') center center no-repeat;
-background-size:80%;
-opacity:.08;
+background-size:60%;
+opacity:.12;
 pointer-events:none;
+z-index:-1;
 }
 
-#splash{
-position:fixed;
-inset:0;
-background:#000;
+.slider{
 display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:999;
-animation:hideSplash 3s forwards;
-}
-
-#splash img{
-width:220px;
-animation:glow 2s infinite alternate;
-}
-
-#splash h1{
-margin-top:20px;
-color:#ff008a;
-}
-
-@keyframes glow{
-from{transform:scale(1);}
-to{transform:scale(1.08);}
-}
-
-@keyframes hideSplash{
-0%,80%{opacity:1;}
-100%{opacity:0;visibility:hidden;}
-}
-
-.app{
-padding:20px;
+width:100vw;
 height:100vh;
-overflow-y:auto;
-}
-
-.balance{
-text-align:center;
-margin-top:30px;
-margin-bottom:20px;
-}
-
-.balance h2{
-color:#ff008a;
-font-size:32px;
-}
-
-.carousel{
-display:flex;
-gap:20px;
 overflow-x:auto;
 scroll-snap-type:x mandatory;
 -webkit-overflow-scrolling:touch;
-padding-bottom:20px;
+scroll-behavior:smooth;
 }
 
-.carousel::-webkit-scrollbar{
+.slider::-webkit-scrollbar{
 display:none;
 }
 
-.card{
-min-width:280px;
-height:180px;
-background:rgba(255,255,255,.08);
-border:1px solid #ff008a;
-border-radius:25px;
-padding:20px;
-scroll-snap-align:center;
-backdrop-filter:blur(10px);
+.slide{
+min-width:100vw;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+scroll-snap-align:start;
 }
 
-.card h3{
+.card{
+width:90%;
+max-width:500px;
+background:rgba(255,255,255,.05);
+border:1px solid #ff008a;
+border-radius:30px;
+padding:30px;
+backdrop-filter:blur(15px);
+box-shadow:0 0 25px rgba(255,0,138,.3);
+text-align:center;
+}
+
+h1{
 color:#ff008a;
+margin-bottom:20px;
+font-size:36px;
+}
+
+h2{
+color:#ff008a;
+margin-bottom:20px;
+}
+
+.balance{
+font-size:42px;
+font-weight:bold;
 margin-bottom:15px;
 }
 
 .btn{
 width:100%;
-padding:12px;
+padding:15px;
 border:none;
-border-radius:15px;
+border-radius:20px;
 background:#ff008a;
 color:white;
-font-size:16px;
-margin-top:10px;
+font-size:18px;
+margin-top:15px;
 }
 
-.tokens{
-display:flex;
-gap:10px;
-margin-top:20px;
-overflow-x:auto;
+input,select{
+width:100%;
+padding:15px;
+margin-top:10px;
+border:none;
+border-radius:15px;
+background:#111;
+color:white;
+}
+
+.qr{
+width:220px;
+height:220px;
+background:white;
+margin:auto;
+border-radius:20px;
 }
 
 .token{
-padding:10px 15px;
 background:#111;
-border:1px solid #ff008a;
+padding:12px;
+margin-top:10px;
 border-radius:15px;
-white-space:nowrap;
+border:1px solid #ff008a;
 }
+
+.hint{
+margin-top:20px;
+opacity:.6;
+font-size:14px;
+}
+
 </style>
 </head>
 
 <body>
 
-<div id="splash">
-<img src="B71822F6-8B75-41A2-88BE-0D7AF4F79B55.png">
-<h1>WELCOME TO MASK CASH</h1>
-</div>
+<div class="slider">
 
-<div class="app">
+<!-- PORTFOLIO -->
+
+<section class="slide">
+<div class="card">
+
+<h1>MASK CASH</h1>
 
 <div class="balance">
-<h2>K$ 12,500</h2>
+K$ 12,500
+</div>
+
 <p>ETH 0.15</p>
+
+<button class="btn">
+Connect Wallet
+</button>
+
+<div class="hint">
+Swipe →
 </div>
 
-<div class="carousel">
+</div>
+</section>
 
+<!-- SEND -->
+
+<section class="slide">
 <div class="card">
-<h3>Wallet</h3>
-<p>Connect your wallet</p>
-<button class="btn">Connect Wallet</button>
+
+<h2>SEND</h2>
+
+<input placeholder="Recipient Address">
+
+<input placeholder="Amount">
+
+<button class="btn">
+Send K$
+</button>
+
+<div class="hint">
+← Swipe →
 </div>
 
+</div>
+</section>
+
+<!-- RECEIVE -->
+
+<section class="slide">
 <div class="card">
-<h3>Send</h3>
-<p>Send K$ tokens</p>
+
+<h2>RECEIVE</h2>
+
+<div class="qr"></div>
+
+<p style="margin-top:20px">
+Your Wallet Address
+</p>
+
+<button class="btn">
+Copy Address
+</button>
+
+<div class="hint">
+← Swipe →
 </div>
 
+</div>
+</section>
+
+<!-- SWAP -->
+
+<section class="slide">
 <div class="card">
-<h3>Receive</h3>
-<p>Receive payments</p>
+
+<h2>SWAP</h2>
+
+<input placeholder="Amount">
+
+<select>
+<option>K$</option>
+<option>BTC</option>
+<option>ETH</option>
+<option>USDT</option>
+<option>USDC</option>
+</select>
+
+<select>
+<option>BTC</option>
+<option>ETH</option>
+<option>USDT</option>
+<option>USDC</option>
+<option>K$</option>
+</select>
+
+<button class="btn">
+Swap
+</button>
+
+<div class="hint">
+← Swipe →
 </div>
 
+</div>
+</section>
+
+<!-- HISTORY -->
+
+<section class="slide">
 <div class="card">
-<h3>Swap</h3>
-<p>Swap assets</p>
+
+<h2>HISTORY</h2>
+
+<div class="token">
++250 K$
 </div>
 
-<div class="card">
-<h3>History</h3>
-<p>Transactions history</p>
+<div class="token">
+-50 K$
+</div>
+
+<div class="token">
++0.10 ETH
+</div>
+
+<div class="hint">
+← Swipe
 </div>
 
 </div>
-
-<div class="tokens">
-<div class="token">K$</div>
-<div class="token">BTC</div>
-<div class="token">ETH</div>
-<div class="token">USDT</div>
-<div class="token">USDC</div>
-</div>
+</section>
 
 </div>
 
